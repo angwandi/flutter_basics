@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_basics/intermediate/charts/animated_pie_chart.dart';
 import 'package:flutter_basics/intermediate/charts/grouping.dart';
 import 'package:flutter_basics/intermediate/charts/intro.dart';
+import 'package:flutter_basics/intermediate/layout_widgets/custome_stepper.dart';
 import 'package:flutter_basics/intermediate/layout_widgets/expansion_panel.dart';
+import 'package:flutter_basics/intermediate/layout_widgets/stepper.dart';
 
 import 'basic/buttons/flat_button.dart';
 import 'basic/buttons/icon_button.dart';
 import 'intermediate/charts/assingment.dart';
+import 'basic/layouts/indexed_stack.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
         ExpansionView.id: (BuildContext context) => ExpansionView(),
         AnimatedPieView.id: (BuildContext context) => AnimatedPieView(),
         AssingmentChartView.id: (BuildContext context) => AssingmentChartView(),
+        StepperView.id: (BuildContext context) => StepperView(),
+        IndexedStackView.id: (BuildContext context) => IndexedStackView(),
+        CustomStepperView.id: (BuildContext context) => CustomStepperView(),
       },
     );
   }
@@ -87,6 +93,16 @@ class _MyHomePageState extends State<MyHomePage> {
             Items(
               title: Text('Assignment Charts'),
               onTap: () => Navigator.pushNamed(context, AssingmentChartView.id),
+            ),
+            Divider(),
+            Items(
+              title: Text('Stepper'),
+              onTap: () => Navigator.pushNamed(context, StepperView.id),
+            ),
+            Divider(),
+            Items(
+              title: Text('Indexed stack'),
+              onTap: () => Navigator.pushNamed(context, IndexedStackView.id),
             ),
             Divider(),
           ],
